@@ -1,0 +1,624 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D3CD9BA5-3C67-4AD2-8F40-F7A9E8B76EFF}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JCB.UI</RootNamespace>
+    <AssemblyName>JCB.UI</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=4.1.40412.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Common\LOCAL.css" />
+    <Content Include="Common\Print.js" />
+    <Content Include="Controls\PrintControl.ascx" />
+    <Content Include="EditTransactionNew.aspx" />
+    <Content Include="CreateTransactionNew.aspx" />
+    <Content Include="Images\Icons\Date.png" />
+    <Content Include="Images\Icons\EditPassword.png" />
+    <Content Include="Images\Icons\Help.png" />
+    <Content Include="Images\Icons\Printer.png" />
+    <Content Include="Images\Icons\Search.png" />
+    <Content Include="Images\Icons\stockreport.png" />
+    <Content Include="Print.css" />
+    <Content Include="PrintPage.aspx" />
+    <Content Include="PrintTransaction.aspx" />
+    <Content Include="ReportBalance.aspx" />
+    <Content Include="Common\border-radius.htc" />
+    <Content Include="Common\less-1.3.0.min.js" />
+    <Content Include="Common\Main.css" />
+    <Content Include="Common\Menu.js" />
+    <Content Include="Common\Scripts\docs\accordion.html" />
+    <Content Include="Common\Scripts\docs\addClass.html" />
+    <Content Include="Common\Scripts\docs\animate.html" />
+    <Content Include="Common\Scripts\docs\autocomplete.html" />
+    <Content Include="Common\Scripts\docs\button.html" />
+    <Content Include="Common\Scripts\docs\datepicker.html" />
+    <Content Include="Common\Scripts\docs\dialog.html" />
+    <Content Include="Common\Scripts\docs\draggable.html" />
+    <Content Include="Common\Scripts\docs\droppable.html" />
+    <Content Include="Common\Scripts\docs\effect.html" />
+    <Content Include="Common\Scripts\docs\hide.html" />
+    <Content Include="Common\Scripts\docs\position.html" />
+    <Content Include="Common\Scripts\docs\progressbar.html" />
+    <Content Include="Common\Scripts\docs\removeClass.html" />
+    <Content Include="Common\Scripts\docs\resizable.html" />
+    <Content Include="Common\Scripts\docs\selectable.html" />
+    <Content Include="Common\Scripts\docs\show.html" />
+    <Content Include="Common\Scripts\docs\slider.html" />
+    <Content Include="Common\Scripts\docs\sortable.html" />
+    <Content Include="Common\Scripts\docs\switchClass.html" />
+    <Content Include="Common\Scripts\docs\tabs.html" />
+    <Content Include="Common\Scripts\docs\toggle.html" />
+    <Content Include="Common\Scripts\docs\toggleClass.html" />
+    <Content Include="Common\Scripts\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Common\Scripts\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Common\Scripts\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Common\Scripts\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Common\Scripts\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Common\Scripts\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Common\Scripts\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Common\Scripts\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Common\Scripts\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Common\Scripts\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Common\Scripts\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Common\Scripts\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Common\Scripts\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Common\Scripts\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Common\Scripts\themes\base\jquery.ui.all.css" />
+    <Content Include="Common\Scripts\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Common\Scripts\themes\base\jquery.ui.base.css" />
+    <Content Include="Common\Scripts\themes\base\jquery.ui.button.css" />
+    <Content Include="Common\Scripts\themes\base\jquery.ui.core.css" />
+    <Content Include="Common\Scripts\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Common\Scripts\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Common\Scripts\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Common\Scripts\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Common\Scripts\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Common\Scripts\themes\base\jquery.ui.slider.css" />
+    <Content Include="Common\Scripts\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Common\Scripts\themes\base\jquery.ui.theme.css" />
+    <Content Include="Common\Scripts\themes\ui-lightness\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="Common\Scripts\themes\ui-lightness\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="Common\Scripts\themes\ui-lightness\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="Common\Scripts\themes\ui-lightness\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="Common\Scripts\themes\ui-lightness\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="Common\Scripts\themes\ui-lightness\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Common\Scripts\themes\ui-lightness\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="Common\Scripts\themes\ui-lightness\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="Common\Scripts\themes\ui-lightness\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="Common\Scripts\themes\ui-lightness\images\ui-icons_222222_256x240.png" />
+    <Content Include="Common\Scripts\themes\ui-lightness\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="Common\Scripts\themes\ui-lightness\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="Common\Scripts\themes\ui-lightness\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="Common\Scripts\themes\ui-lightness\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Common\Scripts\themes\ui-lightness\jquery-ui-1.8.19.custom.css" />
+    <Content Include="Common\Scripts\themes\ui-lightness\jquery.ui.accordion.css" />
+    <Content Include="Common\Scripts\themes\ui-lightness\jquery.ui.all.css" />
+    <Content Include="Common\Scripts\themes\ui-lightness\jquery.ui.autocomplete.css" />
+    <Content Include="Common\Scripts\themes\ui-lightness\jquery.ui.base.css" />
+    <Content Include="Common\Scripts\themes\ui-lightness\jquery.ui.button.css" />
+    <Content Include="Common\Scripts\themes\ui-lightness\jquery.ui.core.css" />
+    <Content Include="Common\Scripts\themes\ui-lightness\jquery.ui.datepicker.css" />
+    <Content Include="Common\Scripts\themes\ui-lightness\jquery.ui.dialog.css" />
+    <Content Include="Common\Scripts\themes\ui-lightness\jquery.ui.progressbar.css" />
+    <Content Include="Common\Scripts\themes\ui-lightness\jquery.ui.resizable.css" />
+    <Content Include="Common\Scripts\themes\ui-lightness\jquery.ui.selectable.css" />
+    <Content Include="Common\Scripts\themes\ui-lightness\jquery.ui.slider.css" />
+    <Content Include="Common\Scripts\themes\ui-lightness\jquery.ui.tabs.css" />
+    <Content Include="Common\Scripts\themes\ui-lightness\jquery.ui.theme.css" />
+    <Content Include="Common\Scripts\ui\i18n\jquery-ui-i18n.js" />
+    <Content Include="Common\Scripts\ui\i18n\jquery.ui.datepicker-af.js" />
+    <Content Include="Common\Scripts\ui\i18n\jquery.ui.datepicker-ar-DZ.js" />
+    <Content Include="Common\Scripts\ui\i18n\jquery.ui.datepicker-ar.js" />
+    <Content Include="Common\Scripts\ui\i18n\jquery.ui.datepicker-az.js" />
+    <Content Include="Common\Scripts\ui\i18n\jquery.ui.datepicker-bg.js" />
+    <Content Include="Common\Scripts\ui\i18n\jquery.ui.datepicker-bs.js" />
+    <Content Include="Common\Scripts\ui\i18n\jquery.ui.datepicker-ca.js" />
+    <Content Include="Common\Scripts\ui\i18n\jquery.ui.datepicker-cs.js" />
+    <Content Include="Common\Scripts\ui\i18n\jquery.ui.datepicker-cy-GB.js" />
+    <Content Include="Common\Scripts\ui\i18n\jquery.ui.datepicker-da.js" />
+    <Content Include="Common\Scripts\ui\i18n\jquery.ui.datepicker-de.js" />
+    <Content Include="Common\Scripts\ui\i18n\jquery.ui.datepicker-el.js" />
+    <Content Include="Common\Scripts\ui\i18n\jquery.ui.datepicker-en-AU.js" />
+    <Content Include="Common\Scripts\ui\i18n\jquery.ui.datepicker-en-GB.js" />
+    <Content Include="Common\Scripts\ui\i18n\jquery.ui.datepicker-en-NZ.js" />
+    <Content Include="Common\Scripts\ui\i18n\jquery.ui.datepicker-eo.js" />
+    <Content Include="Common\Scripts\ui\i18n\jquery.ui.datepicker-es.js" />
+    <Content Include="Common\Scripts\ui\i18n\jquery.ui.datepicker-et.js" />
+    <Content Include="Common\Scripts\ui\i18n\jquery.ui.datepicker-eu.js" />
+    <Content Include="Common\Scripts\ui\i18n\jquery.ui.datepicker-fa.js" />
+    <Content Include="Common\Scripts\ui\i18n\jquery.ui.datepicker-fi.js" />
+    <Content Include="Common\Scripts\ui\i18n\jquery.ui.datepicker-fo.js" />
+    <Content Include="Common\Scripts\ui\i18n\jquery.ui.datepicker-fr-CH.js" />
+    <Content Include="Common\Scripts\ui\i18n\jquery.ui.datepicker-fr.js" />
+    <Content Include="Common\Scripts\ui\i18n\jquery.ui.datepicker-ge.js" />
+    <Content Include="Common\Scripts\ui\i18n\jquery.ui.datepicker-gl.js" />
+    <Content Include="Common\Scripts\ui\i18n\jquery.ui.datepicker-he.js" />
+    <Content Include="Common\Scripts\ui\i18n\jquery.ui.datepicker-hi.js" />
+    <Content Include="Common\Scripts\ui\i18n\jquery.ui.datepicker-hr.js" />
+    <Content Include="Common\Scripts\ui\i18n\jquery.ui.datepicker-hu.js" />
+    <Content Include="Common\Scripts\ui\i18n\jquery.ui.datepicker-hy.js" />
+    <Content Include="Common\Scripts\ui\i18n\jquery.ui.datepicker-id.js" />
+    <Content Include="Common\Scripts\ui\i18n\jquery.ui.datepicker-is.js" />
+    <Content Include="Common\Scripts\ui\i18n\jquery.ui.datepicker-it.js" />
+    <Content Include="Common\Scripts\ui\i18n\jquery.ui.datepicker-ja.js" />
+    <Content Include="Common\Scripts\ui\i18n\jquery.ui.datepicker-kk.js" />
+    <Content Include="Common\Scripts\ui\i18n\jquery.ui.datepicker-km.js" />
+    <Content Include="Common\Scripts\ui\i18n\jquery.ui.datepicker-ko.js" />
+    <Content Include="Common\Scripts\ui\i18n\jquery.ui.datepicker-lb.js" />
+    <Content Include="Common\Scripts\ui\i18n\jquery.ui.datepicker-lt.js" />
+    <Content Include="Common\Scripts\ui\i18n\jquery.ui.datepicker-lv.js" />
+    <Content Include="Common\Scripts\ui\i18n\jquery.ui.datepicker-mk.js" />
+    <Content Include="Common\Scripts\ui\i18n\jquery.ui.datepicker-ml.js" />
+    <Content Include="Common\Scripts\ui\i18n\jquery.ui.datepicker-ms.js" />
+    <Content Include="Common\Scripts\ui\i18n\jquery.ui.datepicker-nl-BE.js" />
+    <Content Include="Common\Scripts\ui\i18n\jquery.ui.datepicker-nl.js" />
+    <Content Include="Common\Scripts\ui\i18n\jquery.ui.datepicker-no.js" />
+    <Content Include="Common\Scripts\ui\i18n\jquery.ui.datepicker-pl.js" />
+    <Content Include="Common\Scripts\ui\i18n\jquery.ui.datepicker-pt-BR.js" />
+    <Content Include="Common\Scripts\ui\i18n\jquery.ui.datepicker-pt.js" />
+    <Content Include="Common\Scripts\ui\i18n\jquery.ui.datepicker-rm.js" />
+    <Content Include="Common\Scripts\ui\i18n\jquery.ui.datepicker-ro.js" />
+    <Content Include="Common\Scripts\ui\i18n\jquery.ui.datepicker-ru.js" />
+    <Content Include="Common\Scripts\ui\i18n\jquery.ui.datepicker-sk.js" />
+    <Content Include="Common\Scripts\ui\i18n\jquery.ui.datepicker-sl.js" />
+    <Content Include="Common\Scripts\ui\i18n\jquery.ui.datepicker-sq.js" />
+    <Content Include="Common\Scripts\ui\i18n\jquery.ui.datepicker-sr-SR.js" />
+    <Content Include="Common\Scripts\ui\i18n\jquery.ui.datepicker-sr.js" />
+    <Content Include="Common\Scripts\ui\i18n\jquery.ui.datepicker-sv.js" />
+    <Content Include="Common\Scripts\ui\i18n\jquery.ui.datepicker-ta.js" />
+    <Content Include="Common\Scripts\ui\i18n\jquery.ui.datepicker-th.js" />
+    <Content Include="Common\Scripts\ui\i18n\jquery.ui.datepicker-tj.js" />
+    <Content Include="Common\Scripts\ui\i18n\jquery.ui.datepicker-tr.js" />
+    <Content Include="Common\Scripts\ui\i18n\jquery.ui.datepicker-uk.js" />
+    <Content Include="Common\Scripts\ui\i18n\jquery.ui.datepicker-vi.js" />
+    <Content Include="Common\Scripts\ui\i18n\jquery.ui.datepicker-zh-CN.js" />
+    <Content Include="Common\Scripts\ui\i18n\jquery.ui.datepicker-zh-HK.js" />
+    <Content Include="Common\Scripts\ui\i18n\jquery.ui.datepicker-zh-TW.js" />
+    <Content Include="Common\Scripts\ui\jquery-ui-1.8.19.custom.js" />
+    <Content Include="Common\Scripts\ui\jquery.effects.blind.js" />
+    <Content Include="Common\Scripts\ui\jquery.effects.bounce.js" />
+    <Content Include="Common\Scripts\ui\jquery.effects.clip.js" />
+    <Content Include="Common\Scripts\ui\jquery.effects.core.js" />
+    <Content Include="Common\Scripts\ui\jquery.effects.drop.js" />
+    <Content Include="Common\Scripts\ui\jquery.effects.explode.js" />
+    <Content Include="Common\Scripts\ui\jquery.effects.fade.js" />
+    <Content Include="Common\Scripts\ui\jquery.effects.fold.js" />
+    <Content Include="Common\Scripts\ui\jquery.effects.highlight.js" />
+    <Content Include="Common\Scripts\ui\jquery.effects.pulsate.js" />
+    <Content Include="Common\Scripts\ui\jquery.effects.scale.js" />
+    <Content Include="Common\Scripts\ui\jquery.effects.shake.js" />
+    <Content Include="Common\Scripts\ui\jquery.effects.slide.js" />
+    <Content Include="Common\Scripts\ui\jquery.effects.transfer.js" />
+    <Content Include="Common\Scripts\ui\jquery.ui.accordion.js" />
+    <Content Include="Common\Scripts\ui\jquery.ui.autocomplete.js" />
+    <Content Include="Common\Scripts\ui\jquery.ui.button.js" />
+    <Content Include="Common\Scripts\ui\jquery.ui.core.js" />
+    <Content Include="Common\Scripts\ui\jquery.ui.datepicker.js" />
+    <Content Include="Common\Scripts\ui\jquery.ui.dialog.js" />
+    <Content Include="Common\Scripts\ui\jquery.ui.draggable.js" />
+    <Content Include="Common\Scripts\ui\jquery.ui.droppable.js" />
+    <Content Include="Common\Scripts\ui\jquery.ui.mouse.js" />
+    <Content Include="Common\Scripts\ui\jquery.ui.position.js" />
+    <Content Include="Common\Scripts\ui\jquery.ui.progressbar.js" />
+    <Content Include="Common\Scripts\ui\jquery.ui.resizable.js" />
+    <Content Include="Common\Scripts\ui\jquery.ui.selectable.js" />
+    <Content Include="Common\Scripts\ui\jquery.ui.slider.js" />
+    <Content Include="Common\Scripts\ui\jquery.ui.sortable.js" />
+    <Content Include="Common\Scripts\ui\jquery.ui.tabs.js" />
+    <Content Include="Common\Scripts\ui\jquery.ui.widget.js" />
+    <Content Include="Common\Scripts\ui\minified\jquery.effects.blind.min.js" />
+    <Content Include="Common\Scripts\ui\minified\jquery.effects.bounce.min.js" />
+    <Content Include="Common\Scripts\ui\minified\jquery.effects.clip.min.js" />
+    <Content Include="Common\Scripts\ui\minified\jquery.effects.core.min.js" />
+    <Content Include="Common\Scripts\ui\minified\jquery.effects.drop.min.js" />
+    <Content Include="Common\Scripts\ui\minified\jquery.effects.explode.min.js" />
+    <Content Include="Common\Scripts\ui\minified\jquery.effects.fade.min.js" />
+    <Content Include="Common\Scripts\ui\minified\jquery.effects.fold.min.js" />
+    <Content Include="Common\Scripts\ui\minified\jquery.effects.highlight.min.js" />
+    <Content Include="Common\Scripts\ui\minified\jquery.effects.pulsate.min.js" />
+    <Content Include="Common\Scripts\ui\minified\jquery.effects.scale.min.js" />
+    <Content Include="Common\Scripts\ui\minified\jquery.effects.shake.min.js" />
+    <Content Include="Common\Scripts\ui\minified\jquery.effects.slide.min.js" />
+    <Content Include="Common\Scripts\ui\minified\jquery.effects.transfer.min.js" />
+    <Content Include="Common\Scripts\ui\minified\jquery.ui.accordion.min.js" />
+    <Content Include="Common\Scripts\ui\minified\jquery.ui.autocomplete.min.js" />
+    <Content Include="Common\Scripts\ui\minified\jquery.ui.button.min.js" />
+    <Content Include="Common\Scripts\ui\minified\jquery.ui.core.min.js" />
+    <Content Include="Common\Scripts\ui\minified\jquery.ui.datepicker.min.js" />
+    <Content Include="Common\Scripts\ui\minified\jquery.ui.dialog.min.js" />
+    <Content Include="Common\Scripts\ui\minified\jquery.ui.draggable.min.js" />
+    <Content Include="Common\Scripts\ui\minified\jquery.ui.droppable.min.js" />
+    <Content Include="Common\Scripts\ui\minified\jquery.ui.mouse.min.js" />
+    <Content Include="Common\Scripts\ui\minified\jquery.ui.position.min.js" />
+    <Content Include="Common\Scripts\ui\minified\jquery.ui.progressbar.min.js" />
+    <Content Include="Common\Scripts\ui\minified\jquery.ui.resizable.min.js" />
+    <Content Include="Common\Scripts\ui\minified\jquery.ui.selectable.min.js" />
+    <Content Include="Common\Scripts\ui\minified\jquery.ui.slider.min.js" />
+    <Content Include="Common\Scripts\ui\minified\jquery.ui.sortable.min.js" />
+    <Content Include="Common\Scripts\ui\minified\jquery.ui.tabs.min.js" />
+    <Content Include="Common\Scripts\ui\minified\jquery.ui.widget.min.js" />
+    <Content Include="Common\sprites.css" />
+    <Content Include="Common\subModal\close.gif" />
+    <Content Include="Common\subModal\common.js" />
+    <Content Include="Common\subModal\index.html" />
+    <Content Include="Common\subModal\loading.html" />
+    <Content Include="Common\subModal\maskBG.png" />
+    <Content Include="Common\subModal\modalContent.html" />
+    <Content Include="Common\subModal\style.css" />
+    <Content Include="Common\subModal\subModal.css" />
+    <Content Include="Common\subModal\subModal.js" />
+    <Content Include="Common\Validation\default.js" />
+    <Content Include="Common\Validation\jquery.validate.js" />
+    <Content Include="Common\Validation\StyleSheet.css" />
+    <Content Include="ReportReorderLevel.aspx" />
+    <Content Include="ResetPassword.aspx" />
+    <Content Include="Scripts\jquery-ui-1.8.2.custom.min.js" />
+    <Content Include="Service\SampleBind.ascx" />
+    <Content Include="ReportStock.aspx" />
+    <Content Include="ReportTransaction.aspx" />
+    <Content Include="EditTransaction.aspx" />
+    <Content Include="CreateTransaction.aspx" />
+    <Content Include="EditProduct.aspx" />
+    <Content Include="CreateProduct.aspx" />
+    <Content Include="Images\Icons\Cancel.png" />
+    <Content Include="Images\Icons\Garbage.png" />
+    <Content Include="Images\Icons\Logout.png" />
+    <Content Include="Images\Icons\Save.png" />
+    <Content Include="Login.aspx" />
+    <Content Include="ManageProducts.aspx" />
+    <Content Include="EditMetadata.aspx" />
+    <Content Include="CreateMetadata.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="EditUser.aspx" />
+    <Content Include="Images\bg.jpg" />
+    <Content Include="Images\csg-5103c29216777.png" />
+    <Content Include="Images\Icons\Add_on.png" />
+    <Content Include="Images\Icons\Add_off.png" />
+    <Content Include="Images\Icons\Asc.png" />
+    <Content Include="Images\Icons\Desc.png" />
+    <Content Include="Images\Icons\Edit.png" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\transparent.gif" />
+    <Content Include="Global.asax" />
+    <Content Include="ManageMetadata.aspx" />
+    <Content Include="ManageTransaction.aspx" />
+    <Content Include="ManageUser.aspx" />
+    <Content Include="Scripts\DatePicker\jquery-1.8.3.js" />
+    <Content Include="Scripts\DatePicker\jquery-ui.css" />
+    <Content Include="Scripts\DatePicker\jquery-ui.js" />
+    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="CreateUser.aspx" />
+    <Content Include="Service\DataManager.asmx" />
+    <Content Include="Service\Script.Transaction.js" />
+    <Content Include="t1.aspx" />
+    <Content Include="UnderDevelopment.aspx" />
+    <Content Include="Validation.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppDefinition\PrintHelper.cs" />
+    <Compile Include="Controls\PrintControl.ascx.cs">
+      <DependentUpon>PrintControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\PrintControl.ascx.designer.cs">
+      <DependentUpon>PrintControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="EditTransactionNew.aspx.cs">
+      <DependentUpon>EditTransactionNew.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditTransactionNew.aspx.designer.cs">
+      <DependentUpon>EditTransactionNew.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CreateTransactionNew.aspx.cs">
+      <DependentUpon>CreateTransactionNew.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CreateTransactionNew.aspx.designer.cs">
+      <DependentUpon>CreateTransactionNew.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\PrintHelper.cs" />
+    <Compile Include="PrintPage.aspx.cs">
+      <DependentUpon>PrintPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrintPage.aspx.designer.cs">
+      <DependentUpon>PrintPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrintTransaction.aspx.cs">
+      <DependentUpon>PrintTransaction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrintTransaction.aspx.designer.cs">
+      <DependentUpon>PrintTransaction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportBalance.aspx.cs">
+      <DependentUpon>ReportBalance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportBalance.aspx.designer.cs">
+      <DependentUpon>ReportBalance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Common.cs" />
+    <Compile Include="ReportReorderLevel.aspx.cs">
+      <DependentUpon>ReportReorderLevel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportReorderLevel.aspx.designer.cs">
+      <DependentUpon>ReportReorderLevel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ResetPassword.aspx.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ResetPassword.aspx.designer.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Service\SampleBind.ascx.cs">
+      <DependentUpon>SampleBind.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Service\SampleBind.ascx.designer.cs">
+      <DependentUpon>SampleBind.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportStock.aspx.cs">
+      <DependentUpon>ReportStock.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportStock.aspx.designer.cs">
+      <DependentUpon>ReportStock.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportTransaction.aspx.cs">
+      <DependentUpon>ReportTransaction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportTransaction.aspx.designer.cs">
+      <DependentUpon>ReportTransaction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditTransaction.aspx.cs">
+      <DependentUpon>EditTransaction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditTransaction.aspx.designer.cs">
+      <DependentUpon>EditTransaction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CreateTransaction.aspx.cs">
+      <DependentUpon>CreateTransaction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CreateTransaction.aspx.designer.cs">
+      <DependentUpon>CreateTransaction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditProduct.aspx.cs">
+      <DependentUpon>EditProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditProduct.aspx.designer.cs">
+      <DependentUpon>EditProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CreateProduct.aspx.cs">
+      <DependentUpon>CreateProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CreateProduct.aspx.designer.cs">
+      <DependentUpon>CreateProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageProducts.aspx.cs">
+      <DependentUpon>ManageProducts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageProducts.aspx.designer.cs">
+      <DependentUpon>ManageProducts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditMetadata.aspx.cs">
+      <DependentUpon>EditMetadata.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditMetadata.aspx.designer.cs">
+      <DependentUpon>EditMetadata.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CreateMetadata.aspx.cs">
+      <DependentUpon>CreateMetadata.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CreateMetadata.aspx.designer.cs">
+      <DependentUpon>CreateMetadata.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditUser.aspx.cs">
+      <DependentUpon>EditUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditUser.aspx.designer.cs">
+      <DependentUpon>EditUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="ManageMetadata.aspx.cs">
+      <DependentUpon>ManageMetadata.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageMetadata.aspx.designer.cs">
+      <DependentUpon>ManageMetadata.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageTransaction.aspx.cs">
+      <DependentUpon>ManageTransaction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageTransaction.aspx.designer.cs">
+      <DependentUpon>ManageTransaction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageUser.aspx.cs">
+      <DependentUpon>ManageUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageUser.aspx.designer.cs">
+      <DependentUpon>ManageUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\DataManager.asmx.cs">
+      <DependentUpon>DataManager.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="CreateUser.aspx.cs">
+      <DependentUpon>CreateUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CreateUser.aspx.designer.cs">
+      <DependentUpon>CreateUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="t1.aspx.cs">
+      <DependentUpon>t1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="t1.aspx.designer.cs">
+      <DependentUpon>t1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UnderDevelopment.aspx.cs">
+      <DependentUpon>UnderDevelopment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UnderDevelopment.aspx.designer.cs">
+      <DependentUpon>UnderDevelopment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Validation.aspx.cs">
+      <DependentUpon>Validation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Validation.aspx.designer.cs">
+      <DependentUpon>Validation.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Common\Main.less" />
+    <None Include="Common\subModal\CHANGELOG" />
+    <None Include="Common\subModal\LICENSE" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\JCB.BAL\JCB.BAL.csproj">
+      <Project>{55482259-DF63-45A2-907A-F5B2E1D1A5DA}</Project>
+      <Name>JCB.BAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JCB.Entities\JCB.Entities.csproj">
+      <Project>{DA08057E-0310-4065-A373-5D98BB69CDD9}</Project>
+      <Name>JCB.Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>51848</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

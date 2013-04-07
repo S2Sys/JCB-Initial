@@ -1,0 +1,182 @@
+﻿body
+{
+    margin: 0px;
+    background-color: #FFFFFF;
+    color: #000000;
+    font-size: 11pt;
+    font-family: Courier;
+}
+
+.separator
+{
+    border-bottom: dotted 1px #ffffff;
+    height: 10px;
+}
+
+input, select, textarea
+{
+    border: dotted 0px #ffffff;
+    color: #000000;
+    padding: 5px;
+    font-size: 11pt;
+    background-color: #ffffff;
+}
+.list
+{
+    border: dotted 1px #fff;
+    color: #000000;
+    padding: 5px;
+    font-size: 11pt;
+    background-color: #fff;
+}
+select
+{
+    padding: 0 px;
+    line-height: 1.5;
+}
+
+.dontShow
+{
+    display: none;
+}
+
+
+/*
+.gv
+{
+    border: dotted 1px #ccc;
+    border-collapse: separate;
+}
+.gv tr td, .gv th td
+{
+    padding: 2pxl
+    border: dotted 1px #ccc;
+    font-size: 10pt;
+}
+.gv tr .r td
+{
+    background: #fffff;
+}
+.gv tr .ar td
+{
+    background: #ffffff;
+}
+td .rightAlign
+{
+    text-align: right;
+}
+.gv .h th, .gv .h th a, .gv .fr td, .gvh, .gv .h td
+{
+    text-decoration: none;
+    text-align: center;
+    
+    color: #000;
+    font-size: 11pt;
+    font-weight: bold;
+    padding:3px;
+    padding-left:6px;
+    height: 18px;
+    background: #fff !important; border-collapse: collapse;
+    border: #ccc dotted 1px;
+}
+
+.gvh
+{
+    padding: 2px;
+    font-size: 12pt;
+}
+
+
+
+.gv .fr td
+{
+    text-align: right;
+    font-weight: bold;
+}
+.gv .pager td
+{
+    border: 0px;
+}
+.gv .pager span, .gv .pager a
+{
+    padding: 1px 7px 1px 7px;
+    color: #000;
+    background: #ffffff;
+    font-size: 11pt;
+    text-decoration: none;
+}
+.gv .pager span
+{
+    background: #ccc;
+}
+
+
+.gv .h th a img, .gv tr td a img, .gv tr td img
+{
+    vertical-align: bottom;
+    padding: 0px;
+}
+
+
+.gv .r
+{
+    background: #fff;
+}
+.gv .ar
+{
+    background: #fff;
+}
+
+.gv .hl
+{
+    font-weight: 500;
+    vertical-align: top;
+}
+
+
+
+.gv .empty td
+{
+    padding: 10px;
+    text-align: center;
+    font-size: 20pt;
+    font-weight: 200;
+    color: #000;
+    border: dotted #ccc 2px;
+    background: #FFF;
+}
+
+*/
+
+.gvSmall td,.gv td
+{
+    padding: 3px;
+    font-size: 10pt;
+}
+.gvSmall .h th, .gvSmall .h td,
+.gv .h th, .gv .h td
+{
+    padding: 4px;
+    font-size: 10.5pt;
+    font-weight: bold;
+}
+.gvSmall .h th, .gvSmall .h td, .gvSmall .h th, .gvSmall tr td,
+.gv .h th, .gv .h td, .gv .h th, .gv tr td
+{
+    border-collapse: collapse;
+    border: #ccc dotted 1px;
+}
+.gvSmall tr td,
+.gv tr td
+{
+    font-size: 10pt;
+}
+
+
+td .rightAlign
+{
+    text-align: right;
+}
+
+
+.dontShow{ color: White;  display:none; padding-left:100px;} 

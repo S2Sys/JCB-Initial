@@ -1,0 +1,202 @@
+﻿     public int Insert(Patient item)
+        {
+            int result = 0;
+            try
+            {
+                using (SqlConnection con = new SqlConnection(ConnectionString))
+                {
+                    con.Open();
+                    using (SqlCommand cmd = new SqlCommand())
+                    {
+                        cmd.Connection = con;
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.CommandText = "Insert_Patient";
+
+                        cmd.Parameters.Add("@FirstName", SqlDbType.VarChar, 50).Value = item.FirstName;
+                        cmd.Parameters.Add("@LastName", SqlDbType.VarChar, 50).Value = item.LastName;
+                        cmd.Parameters.Add("@Age", SqlDbType.Int).Value = item.Age;
+                        cmd.Parameters.Add("@Email", SqlDbType.VarChar, 50).Value = item.Email;
+                        cmd.Parameters.Add("@PrimaryCarePhysician", SqlDbType.VarChar, 50).Value = item.PrimaryCarePhysician;
+                        cmd.Parameters.Add("@HomePhone", SqlDbType.VarChar, 50).Value = item.HomePhone;
+                        cmd.Parameters.Add("@WorkPhone", SqlDbType.VarChar, 50).Value = item.WorkPhone;
+                        cmd.Parameters.Add("@DOB", SqlDbType.DateTime).Value = item.DateOfBirth;
+                        cmd.Parameters.Add("@HomeAddress", SqlDbType.VarChar, 50).Value = item.Address;
+                        cmd.Parameters.Add("@Apt", SqlDbType.VarChar, 50).Value = item.Apt;
+                        cmd.Parameters.Add("@City", SqlDbType.VarChar).Value = item.City;
+                        cmd.Parameters.Add("@State", SqlDbType.VarChar, 50).Value = item.State;
+                        cmd.Parameters.Add("@ZIP", SqlDbType.VarChar, 50).Value = item.Zip;
+                        cmd.Parameters.Add("@SSN", SqlDbType.VarChar, 50).Value = item.SSN;
+                        cmd.Parameters.Add("@EmployerName", SqlDbType.VarChar, 50).Value = item.EmployerName;
+                        cmd.Parameters.Add("@EmployerPhone", SqlDbType.VarChar, 50).Value = item.EmployerPhone;
+
+                        result = Convert.ToInt32(cmd.ExecuteScalar());
+
+                    }
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                Log.Append(ex);
+            }
+
+            return result;
+
+        }
+
+        public int Update(Patient item)
+        {
+            int result = 0;
+            try
+            {
+
+                using (SqlConnection con = new SqlConnection(ConnectionString))
+                {
+                    con.Open();
+                    using (SqlCommand cmd = new SqlCommand())
+                    {
+                        cmd.Connection = con;
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.CommandText = "Update_Patient";
+                        cmd.Parameters.Add("@PID", SqlDbType.Int).Value = item.Id;
+                        cmd.Parameters.Add("@FirstName", SqlDbType.VarChar, 50).Value = item.FirstName;
+                        cmd.Parameters.Add("@LastName", SqlDbType.VarChar, 50).Value = item.LastName;
+                        cmd.Parameters.Add("@Age", SqlDbType.Int).Value = item.Age;
+                        cmd.Parameters.Add("@Email", SqlDbType.VarChar, 50).Value = item.Email;
+                        cmd.Parameters.Add("@PrimaryCarePhysician", SqlDbType.VarChar, 50).Value = item.PrimaryCarePhysician;
+                        cmd.Parameters.Add("@HomePhone", SqlDbType.VarChar, 50).Value = item.HomePhone;
+                        cmd.Parameters.Add("@WorkPhone", SqlDbType.VarChar, 50).Value = item.WorkPhone;
+                        cmd.Parameters.Add("@DOB", SqlDbType.DateTime).Value = item.DateOfBirth;
+                        cmd.Parameters.Add("@HomeAddress", SqlDbType.VarChar, 50).Value = item.Address;
+                        cmd.Parameters.Add("@Apt", SqlDbType.VarChar, 50).Value = item.Apt;
+                        cmd.Parameters.Add("@City", SqlDbType.VarChar).Value = item.City;
+                        cmd.Parameters.Add("@State", SqlDbType.VarChar, 50).Value = item.State;
+                        cmd.Parameters.Add("@ZIP", SqlDbType.VarChar, 50).Value = item.Zip;
+                        cmd.Parameters.Add("@SSN", SqlDbType.VarChar, 50).Value = item.SSN;
+                        cmd.Parameters.Add("@EmployerName", SqlDbType.VarChar, 50).Value = item.EmployerName;
+                        cmd.Parameters.Add("@EmployerPhone", SqlDbType.VarChar, 50).Value = item.EmployerPhone;
+                        result = Convert.ToInt32(cmd.ExecuteScalar());
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Append(ex);
+            }
+
+            return result;
+
+        }
+
+        public List<Patient> GetPatients()
+        {
+            List<Patient> items = new List<Patient>();
+            try
+            {
+
+                using (SqlConnection con = new SqlConnection(ConnectionString))
+                {
+                    con.Open();
+                    using (SqlCommand cmd = new SqlCommand())
+                    {
+                        cmd.Connection = con;
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.CommandText = "Get_Patients";
+
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                items.Add(new Patient()
+                                {
+                                    Id = CastInt(reader["PatientId"]),
+                                    FirstName = CastString(reader["FirstName"]),
+                                    LastName = CastString(reader["LastName"]),
+                                    Age = CastInt(reader["Age"]),
+                                    Email = CastString(reader["Email"]),
+                                    PrimaryCarePhysician = CastString(reader["PrimaryCarePhysician"]),
+                                    HomePhone = CastString(reader["HomePhone"]),
+                                    WorkPhone = CastString(reader["WorkPhone"]),
+                                    DateOfBirth = CastDateTime(reader["DOB"]),
+                                    Address = CastString(reader["HomeAddress"]),
+                                    Apt = CastString(reader["Apt"]),
+                                    City = CastString(reader["City"]),
+                                    State = CastString(reader["State"]),
+                                    Zip = CastString(reader["ZIP"]),
+                                    SSN = CastString(reader["SSN"]),
+                                    EmployerName = CastString(reader["EmployerName"]),
+                                    EmployerPhone = CastString(reader["EmployerPhone"]),
+
+                                });
+                            }
+                        }
+                    }
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                Log.Append(ex);
+            }
+            return items;
+
+        }
+
+        public Patient GetPatient(int id)
+        {
+            Patient item = new Patient();
+            try
+            {
+
+                using (SqlConnection con = new SqlConnection(ConnectionString))
+                {
+                    con.Open();
+                    using (SqlCommand cmd = new SqlCommand())
+                    {
+                        cmd.Connection = con;
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.CommandText = "Get_Patient";
+                        cmd.Parameters.Add("@ID", SqlDbType.Int).Value = item.Id;
+
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                item = new Patient()
+                                {
+                                    Id = CastInt(reader["PatientId"]),
+                                    FirstName = CastString(reader["FirstName"]),
+                                    LastName = CastString(reader["LastName"]),
+                                    Age = CastInt(reader["Age"]),
+                                    Email = CastString(reader["Email"]),
+                                    PrimaryCarePhysician = CastString(reader["PrimaryCarePhysician"]),
+                                    HomePhone = CastString(reader["HomePhone"]),
+                                    WorkPhone = CastString(reader["WorkPhone"]),
+                                    DateOfBirth = CastDateTime(reader["DOB"]),
+                                    Address = CastString(reader["HomeAddress"]),
+                                    Apt = CastString(reader["Apt"]),
+                                    City = CastString(reader["City"]),
+                                    State = CastString(reader["State"]),
+                                    Zip = CastString(reader["ZIP"]),
+                                    SSN = CastString(reader["SSN"]),
+                                    EmployerName = CastString(reader["EmployerName"]),
+                                    EmployerPhone = CastString(reader["EmployerPhone"])
+                                };
+                            }
+                        }
+
+                    }
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                Log.Append(ex);
+            }
+            return item;
+
+        }

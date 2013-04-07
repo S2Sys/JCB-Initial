@@ -1,0 +1,53 @@
+﻿
+.Sprite {
+    background: url(../Images/csg-5103c29216777.png) no-repeat top left;
+}
+
+.Access{ background-position: 0 0; width: 32px; height: 32px; } 
+.Add{ background-position: 0 -42px; width: 32px; height: 32px; } 
+.AlarmClock{ background-position: 0 -84px; width: 32px; height: 32px; } 
+.ArrowHead-Left{ background-position: 0 -126px; width: 32px; height: 32px; } 
+.ArrowHead-Right{ background-position: 0 -168px; width: 32px; height: 32px; } 
+.Bell{ background-position: 0 -210px; width: 32px; height: 32px; } 
+.Bin{ background-position: 0 -252px; width: 32px; height: 32px; } 
+.Boy{ background-position: 0 -294px; width: 32px; height: 32px; } 
+.BusinessManPreference{ background-position: 0 -336px; width: 32px; height: 32px; } 
+.Calendar{ background-position: 0 -378px; width: 32px; height: 32px; } 
+.Clock{ background-position: 0 -420px; width: 32px; height: 32px; } 
+.Cool{ background-position: 0 -462px; width: 32px; height: 32px; } 
+.DetailsView{ background-position: 0 -504px; width: 32px; height: 32px; } 
+.Discount{ background-position: 0 -546px; width: 32px; height: 32px; } 
+.Edit{ background-position: 0 -588px; width: 32px; height: 32px; } 
+.Export{ background-position: 0 -630px; width: 32px; height: 32px; } 
+.FilterAdd{ background-position: 0 -672px; width: 32px; height: 32px; } 
+.Filter{ background-position: 0 -714px; width: 32px; height: 32px; } 
+.Find, .Zoom{ background-position: 0 -756px; width: 32px; height: 32px; } 
+.Girl{ background-position: 0 -798px; width: 32px; height: 32px; } 
+.Happy{ background-position: 0 -840px; width: 32px; height: 32px; } 
+.IndianRupee{ background-position: 0 -882px; width: 32px; height: 32px; } 
+.Information{ background-position: 0 -924px; width: 32px; height: 32px; } 
+.Junk{ background-position: 0 -966px; width: 32px; height: 32px; } 
+.LoginUser{ background-position: 0 -1008px; width: 32px; height: 32px; } 
+.Monitor{ background-position: 0 -1050px; width: 32px; height: 32px; } 
+.Navigation-Right, .Next{ background-position: 0 -1092px; width: 32px; height: 32px; } 
+.Note{ background-position: 0 -1134px; width: 32px; height: 32px; } 
+.PaidInvoice{ background-position: 0 -1176px; width: 32px; height: 32px; } 
+.PendingInvoice{ background-position: 0 -1218px; width: 32px; height: 32px; } 
+.People{ background-position: 0 -1260px; width: 32px; height: 32px; } 
+.Phone{ background-position: 0 -1302px; width: 32px; height: 32px; } 
+.Previous{ background-position: 0 -1344px; width: 32px; height: 32px; } 
+.Printer{ background-position: 0 -1386px; width: 32px; height: 32px; } 
+.PurchaseOrder{ background-position: 0 -1428px; width: 32px; height: 32px; } 
+.Refresh{ background-position: 0 -1470px; width: 32px; height: 32px; } 
+.Sad{ background-position: 0 -1512px; width: 32px; height: 32px; } 
+.SaveAs{ background-position: 0 -1554px; width: 32px; height: 32px; } 
+.Save{ background-position: 0 -1596px; width: 32px; height: 32px; } 
+.Smile{ background-position: 0 -1638px; width: 32px; height: 32px; } 
+.Telephone{ background-position: 0 -1680px; width: 32px; height: 32px; } 
+.Tools1{ background-position: 0 -1722px; width: 32px; height: 32px; } 
+.Transactionfee{ background-position: 0 -1764px; width: 32px; height: 32px; } 
+.WarningShield{ background-position: 0 -1806px; width: 32px; height: 32px; } 
+.Warning{ background-position: 0 -1848px; width: 32px; height: 32px; } 
+.ZoomIn{ background-position: 0 -1890px; width: 32px; height: 32px; } 
+.ZoomOut{ background-position: 0 -1932px; width: 32px; height: 32px; } 
+.logo{ background-position: 0 -1974px; width: 48px; height: 48px; } 

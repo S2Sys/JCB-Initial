@@ -1,0 +1,37 @@
+﻿//http://lesscss.org/ 
+//http://designmodo.com/xhtml-css-templates/
+
+@primaryColor: #383939;
+@secondaryColor: #66bbe3;
+@headerBG: #2E2E2E;
+@borderColor:#252525;
+@boxBG:#cccccc;
+@base-url: "\Images\";
+
+
+.rounded-corners (@radius: 5px) {
+  border-radius: @radius;
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  
+}
+
+.noMarginNoPadding {
+   padding: 0;
+   margin: 0;
+}
+
+body
+{
+.noMarginNoPadding ;
+background-color:#f63; color:blue;
+}
+
+.curved-box
+{
+    //background-image: url("@{base-url}/images/bg.png");
+	width: 298px;
+	margin: 10px;
+	.rounded-corners; 
+	background-color: @boxBG;
+}

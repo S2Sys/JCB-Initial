@@ -1,0 +1,298 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="JCB.UI.SiteMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head id="Head1" runat="server">
+    <title>JSB Tools Powered by GSP Solutions</title>
+    <link rel="Stylesheet" type="text/css" runat="server" href="~/Common/Sprites.css" />
+    <link rel="Stylesheet" type="text/css" runat="server" href="~/Common/Main.css" />
+    <script src="Scripts/jquery-1.4.1.js" type="text/javascript"></script>
+    <script src="Common/Menu.js" type="text/javascript"></script>
+    <link rel="stylesheet" runat="server" href="~/Common/scripts/themes/base/jquery.ui.all.css" />
+    <script type="text/javascript" src="Common/scripts/ui/jquery.ui.core.js"></script>
+    <script type="text/javascript" src="Common/scripts/ui/jquery.ui.widget.js"></script>
+    <script type="text/javascript" src="Common/scripts/ui/jquery.ui.datepicker.js"></script>
+    <script type="text/javascript" src="Scripts/jquery-ui-1.8.2.custom.min.js"></script>
+    <script type="text/javascript" src="Common/Print.js"></script>
+    <script type="text/javascript">
+        $.extend({
+            getUrlVars: function () {
+                var vars = [], hash;
+                var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+                for (var i = 0; i < hashes.length; i++) {
+                    hash = hashes[i].split('=');
+                    vars.push(hash[0]);
+                    vars[hash[0]] = hash[1];
+                }
+                return vars;
+            },
+            getUrlVar:
+             function (name) {
+                 return $.getUrlVars()[name];
+             }
+        });   
+
+       
+    </script>
+</head>
+<body>
+    <form id="emuForms" runat="server">
+    <script>
+        function WebForm_OnSubmit() {
+            var retValue = true;
+            if (ValidatorOnSubmit && !ValidatorOnSubmit()) {
+                $('.validationFailed').attr('class', 'validationSuccess');
+                var itemsarray = [];
+                for (var i = 0; i < Page_Validators.length; i++) {
+                    var vc = Page_Validators[i];
+                    var $ctv = $('#' + vc.controltovalidate);
+                    if (!vc.isvalid) {
+                        itemsarray.push($ctv);
+                        retValue = false;
+                    }
+
+                }
+
+                for (var index = 0; index < itemsarray.length; index++) {
+                    itemsarray[index].parent().attr('class', 'validationFailed');
+                }
+            }
+            return retValue;
+        }</script>
+    <script type="text/javascript">
+
+        String.Format = function () {
+            var s = arguments[0];
+            for (var i = 0; i < arguments.length - 1; i++) {
+                var reg = new RegExp("\\{" + i + "\\}", "gm");
+                s = s.replace(reg, arguments[i + 1]);
+            }
+            return s;
+        }
+
+        var dialogConfirmed = false;
+        function ConfirmDialog(obj, title, dialogText) {
+            if (!dialogConfirmed) {
+                $('body').append(String.Format("<div id='dialog' title='{0}'><p>{1}</p></div>",
+                    title, dialogText));
+
+                $('#dialog').dialog
+                ({
+                    height: 110,
+                    modal: true,
+                    resizable: false,
+                    draggable: false,
+                    close: function (event, ui) { $('body').find('#dialog').remove(); },
+                    buttons:
+                    {
+                        'Yes': function () {
+                            $(this).dialog('close');
+                            dialogConfirmed = true;
+                            if (obj) obj.click();
+                        },
+                        'No': function () {
+                            $(this).dialog('close');
+                        }
+                    }
+                });
+            }
+
+            return dialogConfirmed;
+        }
+
+ 
+    </script>
+    <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+            <td width="12%">
+            </td>
+            <td width="76%">
+                <table width="100%" cellpadding="0" cellspacing="0" border="0" class="workArea">
+                    <tr class="header-row">
+                        <td>
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                    <td style="vertical-align: middle; text-align: left; width: 200px">
+                                        <a href="Default.aspx" class="siteTitle">
+                                            <img src="Images/logo.png" style="border: 0px" />
+                                            AMS</a>
+                                    </td>
+                                    <td>
+                                        <asp:DropDownList runat="server" ID="ctlBranch" OnSelectedIndexChanged="onBranchChanged"
+                                            AutoPostBack="true" CssClass="branchDdl">
+                                        </asp:DropDownList>
+                                    </td>
+                                    <td class="userTitle">
+                                        <asp:Label runat="server" ID="lblTitle"></asp:Label>
+                                        <%--<asp:ImageButton runat="server" ID="btnLogout" ImageUrl="~/Images/Icons/Logout.png"
+                                                OnClick="btnLogout_Click"></asp:ImageButton>--%>
+                                        <asp:LinkButton runat="server" ID="ImageButton1" Text="Sign Out?" OnClick="ImageButton1_Click"></asp:LinkButton>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr class="navigation-row" id="trMenuAdmin" runat="server">
+                        <td>
+                            <ul id="jsddm">
+                                <li><a href="#">Administration</a>
+                                    <ul>
+                                        <li><a href="ManageUser.aspx?Type=D4AA9E6D-1C36-4016-BA3D-297B545B8EA7">Manage Suplliers</a></li>
+                                        <li><a href="ManageUser.aspx?Type=AC39CD42-92F9-4A2C-ADD8-61EE78A395F9">Manage Customers</a></li>
+                                        <li><a href="ManageUser.aspx?Type=2E7136A8-A322-44F4-BDE1-DA2D43647BF0">Manage Admins</a></li>
+                                        <li><a href="ManageUser.aspx?Type=54C62167-24E0-4065-8FF6-367140C72B6E">Manage Branch
+                                            Users</a></li>
+                                        <li><a href="ManageMetadata.aspx?Type=457089DA-CCB1-4CA5-B20E-25F0BBC78177">Manage Branches</a></li>
+                                        <%-- <li><a href="ManageMetadata.aspx?Type=90C253AA-8A3E-4198-93B5-6CC7F517E34E">Manage Units</a></li>--%>
+                                        <li><a href="ManageMetadata.aspx?Type=48F23095-5885-4883-96B9-84FF566520C2">Manage Product
+                                            Groups</a></li>
+                                        <li><a href="ManageProducts.aspx">Manage Products</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Transactions</a>
+                                    <ul>
+                                        <li><a href="ManageTransaction.aspx?Type=0388CE18-8933-47D4-B4DE-18688C9A2402">Purchase
+                                            Request</a></li>
+                                        <li><a href="ManageTransaction.aspx?Type=F0253045-A295-4926-A427-4ACF32CD747A">Purchase</a></li>
+                                        <li><a href="ManageTransaction.aspx?Type=13B80370-CEE8-4297-9F15-724C60A1A562">Purchase
+                                            Return</a></li>
+                                        <li><a href="ManageTransaction.aspx?Type=689065B3-DF93-4C1C-96D8-4731E4955A8C">Sales</a></li>
+                                        <li><a href="ManageTransaction.aspx?Type=35BF2478-4E45-4EDC-B220-330606E2175D">Sales
+                                            Return</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">
+                                    <%--<img src="Images/transparent.gif"  class="Sprite Tools1"/>--%>Reports</a>
+                                    <ul>
+                                        <li><a href="ReportTransaction.aspx?Type=0388CE18-8933-47D4-B4DE-18688C9A2402">Purchase
+                                            Request Report</a></li>
+                                        <li><a href="ReportTransaction.aspx?Type=F0253045-A295-4926-A427-4ACF32CD747A">Purchase
+                                            Report</a></li>
+                                        <li><a href="ReportTransaction.aspx?Type=13B80370-CEE8-4297-9F15-724C60A1A562">Purchase
+                                            Return Report</a></li>
+                                        <li><a href="ReportTransaction.aspx?Type=689065B3-DF93-4C1C-96D8-4731E4955A8C">Sales
+                                            Report</a></li>
+                                        <li><a href="ReportTransaction.aspx?Type=35BF2478-4E45-4EDC-B220-330606E2175D">Sales
+                                            Return Report</a></li>
+                                        <li><a href="ReportStock.aspx">Stock Report</a></li>
+                                        <li><a href="ReportReorderLevel.aspx">Reorder Level Report</a></li>
+                                        <li><a href="ReportBalance.aspx">Balance Report</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr class="navigation-row" id="trMenuUser" runat="server">
+                        <td>
+                            <ul id="jsddm">
+                                <li><a href="#">Administration</a>
+                                    <ul>
+                                        <li><a href="ManageUser.aspx?Type=AC39CD42-92F9-4A2C-ADD8-61EE78A395F9">Manage Customers</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Transactions</a>
+                                    <ul>
+                                        <li><a href="ManageTransaction.aspx?Type=689065B3-DF93-4C1C-96D8-4731E4955A8C">Sales</a></li>
+                                        <li><a href="ManageTransaction.aspx?Type=35BF2478-4E45-4EDC-B220-330606E2175D">Sales
+                                            Return</a></li>
+                                        <li><a href="ManageTransaction.aspx?Type=0388CE18-8933-47D4-B4DE-18688C9A2402">Purchase
+                                            Request</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Reports</a>
+                                    <ul>
+                                        <li><a href="ReportTransaction.aspx?Type=689065B3-DF93-4C1C-96D8-4731E4955A8C">Sales
+                                            Report</a></li>
+                                        <li><a href="ReportTransaction.aspx?Type=F0253045-A295-4926-A427-4ACF32CD747A">Purchase
+                                            Report</a></li>
+                                        <li><a href="ReportTransaction.aspx?Type=35BF2478-4E45-4EDC-B220-330606E2175D">Sales
+                                            Return Report</a></li>
+                                        <li><a href="ReportTransaction.aspx?Type=13B80370-CEE8-4297-9F15-724C60A1A562">Purchase
+                                            Return Report</a></li>
+                                        <li><a href="ReportTransaction.aspx?Type=0388CE18-8933-47D4-B4DE-18688C9A2402">Purchase
+                                            Request Report</a></li>
+                                        <li><a href="ReportStock.aspx">Stock Report</a></li>
+                                        <li><a href="ReportReorderLevel.aspx">Reorder Level Report</a></li>
+                                        <li><a href="ReportBalance.aspx">Balance Report</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="nav-row-border">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="content-row" height="500px" valign="top">
+                            <asp:ContentPlaceHolder ID="content" runat="server">
+                            </asp:ContentPlaceHolder>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="footer-row">
+                            Powered by GSP solutions
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td width="12%">
+            </td>
+        </tr>
+    </table>
+    <script type="text/javascript">
+        function openPopupDialog(location, windowTitle, heightValue, widthValue) {
+
+            var $dialog = $('#dialogWin').load('submission.asp')
+        .dialog({
+            autoOpen: false,
+            modal: true,
+            draggable: false,
+            resizable: false,
+            title: windowTitle,
+            width: widthValue,
+            height: heightValue
+        });
+
+            $dialog.dialog('open');
+
+            return false;
+        }
+
+        //location.reload(true);
+
+
+        $(function () {
+
+
+            ///  alert(window.parent.location);
+            ///  alert(window.location);
+            if (window.parent.location.href != window.location.href) {
+                $('.footer-row').hide();
+                $('.navigation-row').hide();
+                $('.header-row').hide();
+
+            }
+            $(".datepicker").datepicker({
+                showOn: "button",
+                buttonImage: "/images/icons/calendar.png",
+                buttonImageOnly: true
+            });
+        });
+        // $( ".validator" ).css("border","2px solid red").
+
+        jQuery(function () {
+            $(".swap img").hover(
+          function () { this.src = this.src.replace("_off", "_on"); },
+          function () {
+              this.src = this.src.replace("_on", "_off");
+          });
+        });
+
+
+     
+
+    </script>
+    </form>
+</body>
+</html>
